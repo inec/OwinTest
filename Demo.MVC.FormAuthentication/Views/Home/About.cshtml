@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>About</h2>
+
+<h2>@User.Identity.Name</h2>
+<h2>Welcome @User.Identity.GetUserName()</h2>
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "MyForm1" }))
+{ 
+    <input id="submit" type="submit" value="Log Out" />
+}
+This is protected
+<a href="@Url.Action("LogOff", "Account")">
+    We Gotta Get Outta Here! (Log Out)
+</a>
+http://aspnetguru.com/adding-authentication-to-asp-net-mvc-5/
