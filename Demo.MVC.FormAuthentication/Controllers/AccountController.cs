@@ -1,5 +1,5 @@
 ﻿using Demo.MVC.FormAuthentication.Models;
-using Demo.Security;
+//using Demo.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System.Collections.Generic;
@@ -92,47 +92,7 @@ namespace Demo.MVC.FormAuthentication.Controllers
 
         }
 
-        private List<Claim> GetClaims()
-        {
-            var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Email, "assilabdulrahim@gmail.com"));
-            claims.Add(new Claim(Demo.Security.DemoIdentity.IPClaimType, "128.236.333.2"));
-            claims.Add(new Claim(DemoIdentity.IdClaimType, "12345"));
-            claims.Add(new Claim(ClaimTypes.Name, "Assil"));
-            claims.Add(new Claim(ClaimTypes.Name, "Abdulrahim"));
-
-            var roles = new[] { "Admin", "Citizin", "Worker" };
-            var groups = new[] { "Admin", "Citizin", "Worker" };
-
-            foreach (var item in roles)
-            {
-                claims.Add(new Claim(DemoIdentity.RolesClaimType, item));
-            }
-            foreach (var item in groups)
-            {
-                claims.Add(new Claim(DemoIdentity.GroupClaimType, item));
-            }
-            return claims;
-        }
-
-
-        private void SignIn(List<Claim> claims)//Mind!!! This is System.Security.Claims not WIF claims
-        {
-
-            var claimsIdentity = new DemoIdentity(claims,
-            DefaultAuthenticationTypes.ApplicationCookie);
-
-            //This uses OWIN authentication
-         
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-            AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, claimsIdentity);
-
-
-            HttpContext.User = new DemoPrincipal(AuthenticationManager.AuthenticationResponseGrant.Principal);
-
-
-
-        }
+      
 
 
         private IAuthenticationManager AuthenticationManager

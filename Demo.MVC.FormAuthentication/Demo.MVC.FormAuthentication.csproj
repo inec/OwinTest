@@ -151,12 +151,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\Demo.Security\Demo.Security.csproj">
-      <Project>{8b5d2036-f476-4df4-997b-b54f4465b47a}</Project>
-      <Name>Demo.Security</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
