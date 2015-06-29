@@ -16,7 +16,7 @@ namespace Demo.MVC.FormAuthentication.Controllers
             //@ViewBag.acc = LoginViewModel;
             return View();
         }
-        [Authorize]
+
         public ActionResult Contact()
         {
 

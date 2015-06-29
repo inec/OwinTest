@@ -117,7 +117,7 @@ namespace Demo.MVC.FormAuthentication.Controllers
 
         //
         // POST: /Account/LogOff
-        [HttpPost]
+      //  [HttpPost]
        // [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
