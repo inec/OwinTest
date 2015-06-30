@@ -17,6 +17,9 @@ namespace Demo.MVC.FormAuthentication
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+
+
         }
 
         protected void Session_Start(object sender, EventArgs e)
